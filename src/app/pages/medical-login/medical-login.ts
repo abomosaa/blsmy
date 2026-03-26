@@ -19,6 +19,10 @@ export class MedicalLogin {
   showPassword = signal(false);
   noticeMessage = signal('');
 
+  togglePassword() {
+    this.showPassword.update((value) => !value);
+  }
+
   async onLogin() {
     this.noticeMessage.set('');
     this.isLoading.set(true);
