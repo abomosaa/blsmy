@@ -1,0 +1,199 @@
+<!-- Hero Section -->
+<section class="relative bg-slate-50 pt-16 pb-16 overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://blsmy.com/images/screenshot1.webp" alt="" class="w-full h-full object-cover opacity-15" referrerpolicy="no-referrer">
+  </div>
+  <div class="absolute inset-0 bg-gradient-to-b from-white/95 via-white/90 to-slate-50/95"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-6">
+        <p class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sky-50 text-sky-700 text-sm font-bold">
+          <mat-icon class="text-lg">verified_user</mat-icon>
+          {{ lang.isArabic() ? 'رعاية صحية رقمية موثوقة' : 'Trusted Digital Healthcare' }}
+        </p>
+
+        @if (lang.isArabic()) {
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 font-tajawal leading-[1.2]">
+            رحلتك نحو
+            <span class="text-sky-600">صحة أفضل</span>
+            تبدأ من هنا.
+          </h1>
+        } @else {
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15]">
+            Your Journey to
+            <span class="text-sky-600">Better Health</span>
+            Starts Here.
+          </h1>
+        }
+
+        <p class="text-lg text-slate-600 max-w-2xl">
+          {{ lang.isArabic()
+            ? 'استفد من أفضل الأطباء والحجز الرقمي السلس والرعاية الشخصية في بيئة صحية حديثة.'
+            : 'Access world-class specialists, seamless digital bookings, and personalized care in a modern healthcare environment.' }}
+        </p>
+
+        <div class="max-w-3xl">
+          <div class="rounded-2xl border border-slate-200 bg-white p-2 shadow-lg shadow-sky-100/30 grid grid-cols-[130px_1fr_auto] gap-2 items-center">
+            <select [(ngModel)]="selectedCity" class="px-3 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 focus:outline-none focus:border-sky-500">
+              @for (city of cities; track city.id) {
+                <option [value]="city.id">{{ lang.isArabic() ? city.name : city.nameEn }}</option>
+              }
+            </select>
+            <div class="relative">
+              <mat-icon
+                class="absolute top-1/2 -translate-y-1/2 text-slate-400"
+                [class.right-3]="lang.isArabic()"
+                [class.left-3]="!lang.isArabic()">search</mat-icon>
+              <input
+                type="text"
+                [(ngModel)]="searchQuery"
+                [placeholder]="lang.isArabic() ? 'ابحث عن عيادة أو طبيب...' : 'Find Clinics or Doctors'"
+                class="w-full py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-sky-500"
+                [class.pr-10]="lang.isArabic()"
+                [class.pl-4]="lang.isArabic()"
+                [class.pl-10]="!lang.isArabic()"
+                [class.pr-4]="!lang.isArabic()"
+                [class.text-right]="lang.isArabic()"
+                [class.text-left]="!lang.isArabic()">
+            </div>
+            <button type="button" (click)="executeSearch()" class="px-6 py-3 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-xl transition-colors text-center">
+              {{ lang.isArabic() ? 'بحث' : 'Search' }}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hidden lg:block">
+        <div class="relative">
+          <div class="absolute -top-8 -left-8 w-40 h-40 bg-sky-100 rounded-full blur-3xl"></div>
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBxOUKhzMYFEHOCKF5Hnp5xuesbn8oWqiqHlP_3AIRa_Qo49aey7t2pd24um9E5PUmaNTbmLRA1MeIpy8F05aqBMIWGvnk4km9gUYTrBSDGfox5MtsQgSDkwi2ochZeZ7gJyIz5SN_tv14zDmryIErsq-0x7znZyq_huAh7kDUb4g09s0Yew90egKOh58ITjD59gvNFBLBpWfkR17pcLTgpiFDwF42EWmxnkcHHmNObUznQMqyFHWHJTSYPyExq53A9EEVOAlfLIU"
+            [alt]="lang.isArabic() ? 'طبيب' : 'Doctor'"
+            class="relative z-10 rounded-3xl shadow-2xl w-full max-w-xl mx-auto grayscale hover:grayscale-0 transition-all duration-700">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="pb-14 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 border border-slate-200 rounded-3xl p-6 bg-white shadow-sm">
+      <div class="text-center">
+        <p class="text-2xl sm:text-3xl font-bold text-sky-700 font-tajawal">180k+</p>
+        <p class="text-xs sm:text-sm text-slate-500">{{ lang.isArabic() ? 'حجوزات' : 'Bookings' }}</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl sm:text-3xl font-bold text-sky-700 font-tajawal">35k+</p>
+        <p class="text-xs sm:text-sm text-slate-500">{{ lang.isArabic() ? 'مراجعون سعداء' : 'Happy Patients' }}</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl sm:text-3xl font-bold text-sky-700 font-tajawal">500+</p>
+        <p class="text-xs sm:text-sm text-slate-500">{{ lang.isArabic() ? 'أطباء' : 'Doctors' }}</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl sm:text-3xl font-bold text-sky-700 font-tajawal">70+</p>
+        <p class="text-xs sm:text-sm text-slate-500">{{ lang.isArabic() ? 'عيادات' : 'Clinics' }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Book Appointment CTA Section -->
+<section class="py-16 bg-sky-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Offer image cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group">
+        <img
+          src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&q=80"
+          alt="تبييض الأسنان"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-4">
+          <span class="text-white font-bold font-tajawal text-sm">{{ lang.isArabic() ? 'تبييض الأسنان' : 'Teeth Whitening' }}</span>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group">
+        <img
+          src="https://images.unsplash.com/photo-1588776814546-1ffedca7e1de?w=600&q=80"
+          alt="ابتسامة هوليود"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-4">
+          <span class="text-white font-bold font-tajawal text-sm">{{ lang.isArabic() ? 'ابتسامة هوليود' : 'Hollywood Smile' }}</span>
+        </div>
+      </div>
+      <div class="relative rounded-2xl overflow-hidden shadow-md aspect-[4/3] group">
+        <img
+          src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80"
+          alt="العناية بالبشرة"
+          class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/70 to-transparent flex items-end p-4">
+          <span class="text-white font-bold font-tajawal text-sm">{{ lang.isArabic() ? 'نضارة البشرة' : 'Skin Glow' }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA text + button -->
+    <div class="text-center">
+      <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-4 font-tajawal">
+        {{ lang.isArabic() ? 'احجز موعدك الآن واستفد من عروضنا' : 'Book Now and Benefit from Our Offers' }}
+      </h2>
+      <p class="text-slate-600 mb-8">
+        {{ lang.isArabic() ? 'احجز موعدك لدى إحدى المراكز بخطوات بسيطة...' : 'Book your appointment at one of our centers in simple steps...' }}
+      </p>
+      <a routerLink="/book" class="inline-flex items-center gap-2 px-10 py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-2xl transition-all shadow-xl shadow-sky-200">
+        {{ lang.isArabic() ? 'احجز الآن' : 'Book Now' }}
+        <mat-icon>{{ lang.isArabic() ? 'arrow_back' : 'arrow_forward' }}</mat-icon>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Featured Services Section -->
+<section class="py-24 bg-slate-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-tajawal">{{ lang.isArabic() ? 'خدمات بلسمي' : 'Blsmy Services' }}</h2>
+      <p class="text-slate-600">{{ lang.isArabic() ? 'نقدم مجموعة متكاملة من الحلول الذكية لتطوير منشأتك الصحية وتحسين تجربة مراجعيك.' : 'We offer a comprehensive set of smart solutions to develop your healthcare facility and improve your patients\' experience.' }}</p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (service of featuredServices(); track service.id) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+
+    <div class="text-center mt-12">
+      <a routerLink="/services" class="inline-flex items-center gap-2 px-8 py-4 bg-white border border-slate-200 text-slate-700 font-bold rounded-2xl hover:bg-slate-50 hover:border-sky-200 transition-all">
+        {{ lang.isArabic() ? 'عرض جميع الخدمات' : 'View All Services' }}
+        <mat-icon>{{ lang.isArabic() ? 'arrow_back' : 'arrow_forward' }}</mat-icon>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-24 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4 font-tajawal">{{ lang.isArabic() ? 'آراء الشركاء' : 'Partner Reviews' }}</h2>
+      <p class="text-slate-600">{{ lang.isArabic() ? 'نفخر بثقة كبرى المجمعات والمراكز الطبية في خدماتنا.' : 'We are proud of the trust of major medical complexes and centers in our services.' }}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      @for (testimonial of testimonials(); track testimonial.id) {
+        <app-testimonial-card [testimonial]="testimonial" />
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Partners Carousel -->
+<app-partner-carousel />
+
+<!-- App Download CTA -->
+<app-app-download-banner />

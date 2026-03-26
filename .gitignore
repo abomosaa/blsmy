@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+dist/
+out-tsc/
+.angular/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.js.map
+ 
+# Additional ignores
+.vscode/
+.codex/
+.codex/**
+AppData/
+.config/
+.cache/
+*.log
+tmp/
+temp/
+Thumbs.db
+.env.*

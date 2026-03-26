@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tajawal:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Tajawal", ui-sans-serif, system-ui, sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
+}
+
+:root {
+  --primary: #0ea5e9;
+  --primary-dark: #0284c7;
+  --accent: #10b981;
+  --brand-coral: #FF7676;
+  --bg-light: #f8fafc;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+}
+
+.text-brand-coral { color: var(--brand-coral); }
+.bg-brand-coral { background-color: var(--brand-coral); }
+.border-brand-coral { border-color: var(--brand-coral); }
+
+/* Logo tint filter */
+.logo-tint {
+  filter: grayscale(100%) brightness(0.8) sepia(100%) hue-rotate(-50deg) saturate(3) opacity(0.6);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-tint:hover {
+  filter: grayscale(0%) brightness(1) sepia(0%) hue-rotate(0deg) saturate(1) opacity(1);
+  transform: scale(1.1);
+}
+
+/* Carousel animation */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+body {
+  @apply font-sans bg-slate-50 text-slate-900;
+  direction: rtl;
+}
+
+.font-tajawal {
+  font-family: var(--font-tajawal);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400;
+}

@@ -1,0 +1,96 @@
+<section class="bg-slate-50 pt-28 pb-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+    <div class="max-w-3xl mx-auto text-center space-y-5">
+      <span class="inline-flex items-center rounded-full bg-sky-100 px-4 py-2 text-sm font-bold text-sky-700">
+        {{ lang.isArabic() ? 'المراكز الطبية' : 'Hospitals & Medical Centers' }}
+      </span>
+      <h1 class="text-4xl font-extrabold text-slate-900 font-tajawal sm:text-5xl">
+        {{ lang.isArabic() ? 'اختر المركز المناسب لك' : 'Find the right center for you' }}
+      </h1>
+      <p class="text-lg text-slate-600">
+        {{ lang.isArabic() ? 'تصفح المراكز الطبية المتاحة عبر بلسمي وابحث حسب المدينة أو اسم المركز.' : 'Browse the medical centers available through Blsmy and search by city or center name.' }}
+      </p>
+    </div>
+
+    <div class="rounded-[2rem] border border-slate-200 bg-white p-4 shadow-sm sm:p-6">
+      <div class="grid gap-4 lg:grid-cols-[1fr_auto] lg:items-center">
+        <div class="relative">
+          <mat-icon class="absolute top-1/2 -translate-y-1/2 text-slate-400" [class.right-4]="lang.isArabic()" [class.left-4]="!lang.isArabic()">search</mat-icon>
+          <input
+            type="text"
+            [(ngModel)]="searchQuery"
+            [placeholder]="lang.isArabic() ? 'ابحث عن طبيب أو مركز...' : 'Search for a doctor or center...'"
+            class="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 text-sm text-slate-700 outline-none transition focus:border-sky-500 focus:ring-2 focus:ring-sky-100"
+            [class.pr-12]="lang.isArabic()"
+            [class.pl-4]="lang.isArabic()"
+            [class.pl-12]="!lang.isArabic()"
+            [class.pr-4]="!lang.isArabic()"
+            [class.text-right]="lang.isArabic()"
+            [class.text-left]="!lang.isArabic()">
+        </div>
+
+        <a routerLink="/book" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-sky-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-sky-700">
+          {{ lang.isArabic() ? 'احجز موعدك' : 'Book Now' }}
+          <mat-icon>{{ lang.isArabic() ? 'arrow_back' : 'arrow_forward' }}</mat-icon>
+        </a>
+      </div>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        @for (city of cities(); track city.id) {
+          <button
+            type="button"
+            (click)="setCity(city.id)"
+            class="rounded-full border px-4 py-2 text-sm font-bold transition"
+            [class.border-sky-600]="selectedCity() === city.id"
+            [class.bg-sky-600]="selectedCity() === city.id"
+            [class.text-white]="selectedCity() === city.id"
+            [class.border-slate-200]="selectedCity() !== city.id"
+            [class.bg-white]="selectedCity() !== city.id"
+            [class.text-slate-600]="selectedCity() !== city.id">
+            {{ lang.isArabic() ? city.label : city.labelEn }}
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-3">
+      @for (hospital of filteredHospitals(); track hospital.id) {
+        <article class="flex h-full flex-col rounded-[2rem] border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-200 hover:shadow-lg">
+          <div class="flex items-start justify-between gap-4">
+            <img [src]="hospital.logo" [alt]="lang.isArabic() ? hospital.name : hospital.nameEn" class="h-16 w-16 rounded-2xl border border-slate-200 object-contain p-2 bg-white" referrerpolicy="no-referrer">
+            <span class="inline-flex items-center gap-1 rounded-full bg-amber-50 px-3 py-1 text-xs font-bold text-amber-700">
+              <mat-icon class="text-base">star</mat-icon>
+              {{ hospital.reviewCount }} {{ lang.isArabic() ? 'تقييم' : 'review' }}
+            </span>
+          </div>
+
+          <div class="mt-6 space-y-3 flex-1">
+            <div>
+              <h2 class="text-xl font-bold text-slate-900 font-tajawal">
+                {{ lang.isArabic() ? hospital.name : hospital.nameEn }}
+              </h2>
+              <p class="mt-1 inline-flex items-center gap-2 text-sm text-slate-500">
+                <mat-icon class="text-base text-sky-600">location_on</mat-icon>
+                {{ lang.isArabic() ? hospital.location : hospital.locationEn }}
+              </p>
+            </div>
+
+            <p class="text-sm leading-7 text-slate-600">
+              {{ lang.isArabic() ? hospital.description : hospital.descriptionEn }}
+            </p>
+          </div>
+
+          <a routerLink="/book" class="mt-6 inline-flex items-center justify-center gap-2 rounded-2xl bg-sky-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-sky-700">
+            {{ lang.isArabic() ? 'احجز الآن' : 'Book Now' }}
+            <mat-icon>{{ lang.isArabic() ? 'arrow_back' : 'arrow_forward' }}</mat-icon>
+          </a>
+        </article>
+      } @empty {
+        <div class="col-span-full rounded-[2rem] border border-dashed border-slate-300 bg-white p-10 text-center text-slate-500">
+          <mat-icon class="text-5xl text-slate-300">search_off</mat-icon>
+          <p class="mt-4 text-lg font-bold font-tajawal">{{ lang.isArabic() ? 'لا توجد مراكز مطابقة لبحثك' : 'No centers match your search' }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
