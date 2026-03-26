@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>بلسمي</title>
+    <script>
+      // Single Page App redirect for GitHub Pages
+      // Stores the full path in sessionStorage and redirects to the app root
+      var l = window.location;
+      try {
+        sessionStorage.redirect = l.pathname + l.search + l.hash;
+      } catch (e) {}
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        '/' + l.pathname.split('/')[1] + '/?p=1'
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

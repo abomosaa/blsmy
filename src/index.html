@@ -7,6 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="بلسمي منصة رقمية تجمع المراكز الطبية والعملاء تحت سقف واحد، تقوم بلسمي بتسهيل إدارة و حجز المواعيد كما تتيح التحكم بجداول الأطباء و العيادات بكل سهولة." />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <script>
+      // Single Page App redirect handler for GitHub Pages
+      (function () {
+        try {
+          var redirect = sessionStorage.redirect;
+          delete sessionStorage.redirect;
+          var current = location.pathname + location.search + location.hash;
+          if (redirect && redirect !== current) {
+            history.replaceState(null, null, redirect);
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <app-root></app-root>
