@@ -50,7 +50,7 @@ import { LanguageService } from '../../../core/services/language.service';
                     name="password"
                     required
                     class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-sky-500/20 focus:border-sky-500 transition-all">
-                  <button type="button" (click)="showPassword.update(v => !v)" class="absolute {{ lang.isArabic() ? 'left-3' : 'right-3' }} top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+                  <button type="button" (click)="togglePassword()" class="absolute {{ lang.isArabic() ? 'left-3' : 'right-3' }} top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
                     <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
                   </button>
                 </div>
@@ -100,6 +100,10 @@ export class Login {
   isLoading = signal(false);
   errorMessage = signal('');
   showPassword = signal(false);
+
+  togglePassword() {
+    this.showPassword.update((value) => !value);
+  }
 
   async onLogin() {
     this.isLoading.set(true);
