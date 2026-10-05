@@ -1,4 +1,4 @@
-# AI Development Guide
+# Development Guide
 
 Project stack:
 - Frontend: Angular 21
