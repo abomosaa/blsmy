@@ -248,7 +248,7 @@ import { SupabaseService } from '../../core/services/supabase.service';
 })
 export class Book {
   lang = inject(LanguageService);
-  supabase = inject(SupabaseService);
+  private supabase = inject(SupabaseService);
   currentStep = signal(1);
   isSubmitting = signal(false);
   successMessage = signal('');

@@ -150,7 +150,7 @@ interface Offer {
 })
 export class Offers {
   lang = inject(LanguageService);
-  supabase = inject(SupabaseService);
+  private supabase = inject(SupabaseService);
   selectedCategory = signal('all');
 
   // Buy modal state
