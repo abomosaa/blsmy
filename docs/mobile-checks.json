@@ -1,0 +1,57 @@
+[
+  {
+    "overflow": false,
+    "path": "/",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/services",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/hospitals",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/offers",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/prices",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/about",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/contact",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/book",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/jobs",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/privacy",
+    "width": 390
+  },
+  {
+    "overflow": false,
+    "path": "/medical-login",
+    "width": 390
+  }
+]

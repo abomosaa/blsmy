@@ -1,51 +1,109 @@
-# AI Development Guide
+<div dir="rtl" align="right">
 
-Project stack:
-- Frontend: Angular 21
-- Styling: Tailwind CSS
-- Backend: Supabase
+# بلسمي | صحة أقرب، حياة أسهل
 
-## Goal
-Build a clean, fast, responsive website with simple UX and one main CTA per section.
+موقع عربي متعدد الصفحات للتعريف بمنصة **بلسمي** وخدماتها للمراجعين والمراكز الطبية. يجمع أفكار النسختين الأصليتين في تصميم متجاوب، بألوان أزرق هادئ ومرجاني، وصور توضيحية أصلية مولّدة للموقع.
 
-## Default UX Rules
-- Keep the UI simple
-- Use one main CTA per section
-- Clear navigation
-- Fast loading
-- Clean typography
-- No clutter
+[زيارة الموقع](https://abomosaa.github.io/blsmy/) · [ملاحظات التنفيذ والاختبار](docs/NOTES.md) · [مصادر الصور وأوامر إنشائها](docs/IMAGE_ASSETS.md)
 
-## Allowed Tasks
-- Generate pages
-- Generate components
-- Build forms
-- Write Supabase queries
-- Fix bugs
-- Improve responsive design
-- Refactor code
+## بأي لغة بُني؟
 
-## Workflow
-1. Create layout
-2. Build Home page
-3. Build remaining pages
-4. Add forms
-5. Connect Supabase
-6. Improve responsive behavior
-7. Test and clean up
+- **TypeScript** لمنطق الواجهة، باستخدام **Angular 21** وSignals.
+- **HTML** لقوالب الصفحات و**CSS** مخصص للتصميم والتجاوب.
+- المحتوى باللغة **العربية**، باتجاه **RTL** ومحاذاة لليمين.
+- النشر عبر **GitHub Pages** باستخدام GitHub Actions.
+- الواجهة الحالية تعمل دون خادم أو قاعدة بيانات. ملفات التكامل السابقة محفوظة، ولا يعتمد عليها مسار الزائر الجديد.
 
-AI MUST:
-- Use the exact content
-- Keep headings and text meaning unchanged
+## ماذا يحتوي الموقع؟
 
-AI MAY:
-- Improve formatting
-- Adjust responsiveness
+| الصفحة                         | وظيفتها                                                    |
+| ------------------------------ | ---------------------------------------------------------- |
+| الرئيسية `/`                   | تعريف بالمنصة، بحث عن مركز، تخصصات، خطوات الحجز والتطبيق   |
+| الخدمات `/services`            | عرض 21 خدمة مع البحث والتصفية للمراجعين والمراكز           |
+| المراكز `/hospitals`           | بحث وتصفية حسب المدينة، ونقل اختيار المركز إلى طلب الموعد  |
+| الخدمات والعروض `/offers`      | استكشاف مجالات الرعاية مع توجيه للأسعار الفعلية في التطبيق |
+| حلول المراكز `/prices`         | تعريف بمجموعات الحلول وطلب عرض سعر مخصص                    |
+| عن بلسمي `/about`              | تعريف المنصة والفكرة وراء التجربة                          |
+| طلب موعد `/book`               | ثلاث خطوات: اختيار، تفاصيل، مراجعة ثم فتح واتساب           |
+| التواصل `/contact`             | تجهيز رسالة ومراجعتها قبل فتح واتساب للإرسال               |
+| الانضمام `/jobs`               | الاستفسار عن فرص العمل دون اختلاق وظائف معلنة              |
+| الخصوصية `/privacy`            | شرح التعامل مع البيانات والروابط الخارجية                  |
+| بوابة المراكز `/medical-login` | التواصل للحصول على رابط الدخول المعتمد                     |
 
-AI MUST NOT:
-- Rewrite content
-- Add fake text
-- Add missing sections
+توجد أيضًا صفحة للمسارات غير الموجودة وتحويلات للروابط القديمة.
 
-apply_patch-test: OK
+## صور فعلية من الموقع
 
+### الرئيسية — الكمبيوتر
+
+![الرئيسية](docs/screenshots/home-desktop.jpg)
+
+### المراكز الطبية
+
+![المراكز الطبية](docs/screenshots/centers-desktop.jpg)
+
+### التواصل
+
+![التواصل](docs/screenshots/contact-desktop.jpg)
+
+<details>
+<summary>المزيد من الصور: الجوال والخدمات وحلول المراكز والحجز</summary>
+
+![الرئيسية على الجوال](docs/screenshots/home-mobile.jpg)
+
+![الخدمات](docs/screenshots/services-desktop.jpg)
+
+![حلول المراكز](docs/screenshots/solutions-desktop.jpg)
+
+![مراجعة طلب تجريبي لم يتم إرساله](docs/screenshots/booking-review-desktop.jpg)
+
+[الرئيسية كاملة](docs/screenshots/home-full.jpg)
+
+</details>
+
+## التشغيل محليًا
+
+المتطلبات: Node.js إصدار **22.12 أو أحدث ضمن 22**، أو إصدار **24**، وnpm.
+
+</div>
+
+```bash
+npm ci
+npm start
+```
+
+<div dir="rtl" align="right">
+
+ثم افتح `http://localhost:4200`.
+
+للبناء الإنتاجي:
+
+</div>
+
+```bash
+npm run build
+```
+
+<div dir="rtl" align="right">
+
+المخرجات في `dist/blsmy/browser`. ولمعاينة هذا البناء محليًا:
+
+</div>
+
+```bash
+node scripts/preview.mjs
+```
+
+<div dir="rtl" align="right">
+
+## النشر
+
+كل تحديث لفرع `main` يشغّل `.github/workflows/deploy.yml`، ويبني الموقع مع `--base-href /blsmy/` ثم ينشره إلى GitHub Pages. ملف `public/404.html` يستعيد المسار المطلوب عند فتح رابط داخلي مباشرة.
+
+## حدود التشغيل بوضوح
+
+طلب الموعد **لا يؤكد حجزًا**، ولا يعرض أوقاتًا حية أو ينفذ دفعًا. يجهّز الموقع رسالة يراجعها المستخدم، ثم يفتح واتساب ليضغط المستخدم إرسال بنفسه. الحجز النهائي والتوفر والأسعار تُراجع عبر التطبيق أو فريق بلسمي. لا يتم حفظ بيانات النموذج في التخزين المحلي أو إرسالها تلقائيًا إلى قاعدة بيانات.
+
+أسماء المراكز والمدن مأخوذة من المشروع الأصلي، وتحتاج تأكيدًا تشغيليًا قبل الاعتماد عليها. الصور المولّدة توضيحية؛ لا تمثل أطباء أو منشآت بعينها. التقييمات والإحصاءات والأسعار غير المؤكدة لم تُستخدم في العرض الجديد.
+
+</div>

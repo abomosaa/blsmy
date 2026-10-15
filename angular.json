@@ -21,10 +21,18 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "public" },
-              { "glob": "**/*", "input": "assets", "output": "assets" }
+              {
+                "glob": "**/*",
+                "input": "public"
+              },
+              {
+                "glob": "**/*.webp",
+                "input": "assets",
+                "output": "assets"
+              }
             ],
-            "styles": ["src/styles.css"]
+            "styles": ["src/styles.css"],
+            "outputPath": "dist/blsmy"
           },
           "configurations": {
             "production": {
@@ -40,7 +48,15 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": true
+                },
+                "fonts": false
+              }
             },
             "development": {
               "optimization": false,
@@ -53,8 +69,12 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "blsmy:build:production" },
-            "development": { "buildTarget": "blsmy:build:development" }
+            "production": {
+              "buildTarget": "blsmy:build:production"
+            },
+            "development": {
+              "buildTarget": "blsmy:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
