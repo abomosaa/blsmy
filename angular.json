@@ -3,7 +3,9 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "schematicCollections": ["angular-eslint"],
+    "schematicCollections": [
+      "angular-eslint"
+    ],
     "analytics": false
   },
   "newProjectRoot": "projects",
@@ -32,8 +34,9 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/styles.css"],
-            "outputPath": "dist/blsmy"
+            "styles": [
+              "src/styles.css"
+            ]
           },
           "configurations": {
             "production": {
@@ -85,7 +88,10 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         }
       }
