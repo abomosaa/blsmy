@@ -12,4 +12,12 @@
 
 [صور الموقع](screenshots/) · [سجل ملفات الصور الأصلية](original-assets.json)
 
+## عرض الكمبيوتر
+
+![الرئيسية على الكمبيوتر](screenshots/home-desktop.jpg)
+
+## عرض الجوال
+
+![الرئيسية على الجوال](screenshots/home-mobile.jpg)
+
 </div>
