@@ -4,7 +4,7 @@
 
 موقع عربي متعدد الصفحات للتعريف بمنصة **بلسمي** وخدماتها للمراجعين والمراكز الطبية. يجمع أفكار النسختين الأصليتين في تصميم متجاوب، بألوان أزرق هادئ ومرجاني، وصور توضيحية أصلية مولّدة للموقع.
 
-[زيارة الموقع](https://abomosaa.github.io/blsmy/) · [ملاحظات التنفيذ والاختبار](docs/NOTES.md) · [مصادر الصور وأوامر إنشائها](docs/IMAGE_ASSETS.md)
+[زيارة الموقع](https://abomosaa.github.io/blsmy/) · [ملاحظات التنفيذ والاختبار](docs/NOTES.md)
 
 ## بأي لغة بُني؟
 
@@ -36,28 +36,14 @@
 
 ### الرئيسية — الكمبيوتر
 
-![الرئيسية](docs/screenshots/home-desktop.jpg)
+<img width="1763" height="4992" alt="image" src="https://github.com/user-attachments/assets/a6d193a8-02b1-4720-9261-fc1c6752b9b3" />
 
-### المراكز الطبية
+### الرئيسية — الجوال
+<img width="492" height="7313" alt="image" src="https://github.com/user-attachments/assets/a0e302cf-421b-4b13-9fe8-bce8a9ac2067" />
 
-![المراكز الطبية](docs/screenshots/centers-desktop.jpg)
 
-### التواصل
 
-![التواصل](docs/screenshots/contact-desktop.jpg)
 
-<details>
-<summary>المزيد من الصور: الجوال والخدمات وحلول المراكز والحجز</summary>
-
-![الرئيسية على الجوال](docs/screenshots/home-mobile.jpg)
-
-![الخدمات](docs/screenshots/services-desktop.jpg)
-
-![حلول المراكز](docs/screenshots/solutions-desktop.jpg)
-
-![مراجعة طلب تجريبي لم يتم إرساله](docs/screenshots/booking-review-desktop.jpg)
-
-[الرئيسية كاملة](docs/screenshots/home-full.jpg)
 
 </details>
 
