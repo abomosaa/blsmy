@@ -1,98 +1,110 @@
 [
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/",
-    "title": "بلسمي | صحة أقرب، حياة أسهل"
+    "title": "بلسمي | منصتك لحلول صحية ذكية",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/services",
-    "title": "خدمات بلسمي"
+    "title": "خدمات بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/hospitals",
-    "title": "المراكز الطبية | بلسمي"
+    "title": "المراكز الطبية | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/offers",
-    "title": "الخدمات والعروض | بلسمي"
+    "title": "الخدمات والعروض | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/prices",
-    "title": "حلول المراكز والباقات | بلسمي"
+    "title": "حلول المراكز والباقات | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/about",
-    "title": "عن بلسمي"
+    "title": "عن بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/contact",
-    "title": "تواصل مع بلسمي"
+    "title": "تواصل مع بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/book",
-    "title": "طلب موعد | بلسمي"
+    "title": "طلب موعد | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/jobs",
-    "title": "الانضمام إلى بلسمي"
+    "title": "الانضمام إلى بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/privacy",
-    "title": "الخصوصية | بلسمي"
+    "title": "الخصوصية | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/medical-login",
-    "title": "بوابة المراكز الطبية | بلسمي"
+    "title": "بوابة المراكز الطبية | بلسمي",
+    "width": 1280
   },
   {
-    "brokenImages": 0,
+    "broken": [],
     "emptyLinks": 0,
     "h1": 1,
     "overflow": false,
     "path": "/missing-page",
-    "title": "الصفحة غير موجودة | بلسمي"
+    "title": "الصفحة غير موجودة | بلسمي",
+    "width": 1280
   }
 ]

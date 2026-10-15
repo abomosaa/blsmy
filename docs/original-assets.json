@@ -1,0 +1,454 @@
+{
+  "source": "https://blsmy.com/",
+  "imported_on": "2026-10-15",
+  "assets": [
+    {
+      "source": "https://blsmy.com/images/logo-blsam-mobile.webp",
+      "local": "assets/original/logo-blsam-mobile.webp",
+      "alt": "logo",
+      "bytes": 6344,
+      "sha256": "fba5dfa1bc18c6f54fc6eb1ae6cf02b2fd3783a20b16f0da959c495d7c9d3aec"
+    },
+    {
+      "source": "https://blsmy.com/images/customApp.png",
+      "local": "assets/original/customApp.png",
+      "alt": "تطبيق جوال خاص",
+      "bytes": 6163,
+      "sha256": "926600f660e45df11dc4f372e202e81ffb282977386f5578aafb2b11f83e9cc1"
+    },
+    {
+      "source": "https://blsmy.com/images/kiosk.png",
+      "local": "assets/original/kiosk.png",
+      "alt": "جهاز الخدمة الذاتية",
+      "bytes": 2945,
+      "sha256": "90b4fab3f471b366e25182cb63817670707d12fa1c5e10585e68990ffb237fdd"
+    },
+    {
+      "source": "https://blsmy.com/images/ratingsSystem.jpg",
+      "local": "assets/original/ratingsSystem.jpg",
+      "alt": "نظام التقييمات",
+      "bytes": 12633,
+      "sha256": "49148b69c5c92dfc19995c51a0c6b7c33138c12a7f94b0ae73c9de37a8405284"
+    },
+    {
+      "source": "https://blsmy.com/images/bookReservations.svg",
+      "local": "assets/original/bookReservations.svg",
+      "alt": "حجز المواعيد",
+      "bytes": 3080,
+      "sha256": "3751f0723398108d037a6fbdacd771ed3bfcf4e39eb3d27af1098da3fe7f17e9"
+    },
+    {
+      "source": "https://blsmy.com/images/promoCode.svg",
+      "local": "assets/original/promoCode.svg",
+      "alt": "الأكواد الترويجية",
+      "bytes": 69192,
+      "sha256": "36ab3c0364a7ca136fe904aa28a82a5ed3d99cee228d8e440b4be537733fdda0"
+    },
+    {
+      "source": "https://blsmy.com/images/e-store.png",
+      "local": "assets/original/e-store.png",
+      "alt": "متجر الكتروني",
+      "bytes": 9138,
+      "sha256": "b5ea8b033d623f519c7331a9b4c643c41241493ace376f335281cdd9fface1f8"
+    },
+    {
+      "source": "https://blsmy.com/images/web-site.png",
+      "local": "assets/original/web-site.png",
+      "alt": "موقع تعريفي",
+      "bytes": 13978,
+      "sha256": "f88ecba3d4ac18d3b562ae3c1ff64b65e4c28c38adbfc35c40affdac96e4c6ec"
+    },
+    {
+      "source": "https://blsmy.com/images/notifySystem.svg",
+      "local": "assets/original/notifySystem.svg",
+      "alt": "نظام التذكيرات",
+      "bytes": 9263,
+      "sha256": "4def8cfe2bbdedafac63894bad5ad191f1ecfa80e66eb59088b4ece5e1407023"
+    },
+    {
+      "source": "https://blsmy.com/images/e-pay.png",
+      "local": "assets/original/e-pay.png",
+      "alt": "السداد الإلكتروني",
+      "bytes": 7345,
+      "sha256": "46ed2477df51f8be33ebb44ba8eac222fbb3e11de6c6b70fb096418b1f20843c"
+    },
+    {
+      "source": "https://blsmy.com/images/linking.png",
+      "local": "assets/original/linking.png",
+      "alt": "الربط البرمجي",
+      "bytes": 3249,
+      "sha256": "babd9f0051d20229a50bca2c1a9cba19b66f6cad07851f3b572626effa2b6289"
+    },
+    {
+      "source": "https://blsmy.com/images/enter.png",
+      "local": "assets/original/enter.png",
+      "alt": "تسجيل الدخول الذاتي",
+      "bytes": 5311,
+      "sha256": "94f79d459e576def8a68217fd59157af3c4d95f928c74439989c27569272e07e"
+    },
+    {
+      "source": "https://blsmy.com/images/medInsurance.svg",
+      "local": "assets/original/medInsurance.svg",
+      "alt": "التأمين الطبي",
+      "bytes": 3339,
+      "sha256": "9e297b15661ee2ecef9b913efdd5cc32cf8401d3af68e9f8b020d64ed943eb82"
+    },
+    {
+      "source": "https://blsmy.com/images/labResults.svg",
+      "local": "assets/original/labResults.svg",
+      "alt": "نتائج المختبر و الوصفات و تقارير الأشعة",
+      "bytes": 3420,
+      "sha256": "7ae165883f5f1b97e4907f629f0f6a693f50ec3c9a6c2c7a23439a4ff10dd808"
+    },
+    {
+      "source": "https://blsmy.com/images/map.png",
+      "local": "assets/original/map.png",
+      "alt": "نطاق الحجوزات",
+      "bytes": 9300,
+      "sha256": "50a36a411f440589498cad40ee0594ac8043217083a58e7a06bb0250dbe7c76e"
+    },
+    {
+      "source": "https://blsmy.com/images/moreCustomers.svg",
+      "local": "assets/original/moreCustomers.svg",
+      "alt": "الوصول إلى عملاء أكثر",
+      "bytes": 1799,
+      "sha256": "4578bc880f7d6efb016bb3100df5d5771a9ff1f6a1d21e37f499f94312fc7272"
+    },
+    {
+      "source": "https://blsmy.com/images/jobsSystem.png",
+      "local": "assets/original/jobsSystem.png",
+      "alt": "نظام التوظيف",
+      "bytes": 14861,
+      "sha256": "41fc09f8ff965b444423f4c87bb8b1bc3c4921e11a9dbd145e77a8ef6cc4b234"
+    },
+    {
+      "source": "https://blsmy.com/images/joinBlsmyApp.png",
+      "local": "assets/original/joinBlsmyApp.png",
+      "alt": "الانضمام لتطبيق بلسمي",
+      "bytes": 9321,
+      "sha256": "4f7739f2ca3a5c22b92c607b051817c5c73c810fbe904972bf54014929193fc2"
+    },
+    {
+      "source": "https://blsmy.com/images/homeVisits.svg",
+      "local": "assets/original/homeVisits.svg",
+      "alt": "الزيارات المنزلية",
+      "bytes": 3052,
+      "sha256": "7247b3559d9d3c3957ead6d53f0ca458ee6ded8a869f34d95bb4c15334fef6ff"
+    },
+    {
+      "source": "https://blsmy.com/images/e-consul.svg",
+      "local": "assets/original/e-consul.svg",
+      "alt": "استشارات عن بعد",
+      "bytes": 3206,
+      "sha256": "ccad49e2421cdb1d2c56184da9700793de8af0e2edf4b23e1470184eb0e2afdf"
+    },
+    {
+      "source": "https://blsmy.com/images/techSupport.png",
+      "local": "assets/original/techSupport.png",
+      "alt": "دعم فني متقدم",
+      "bytes": 21954,
+      "sha256": "efe252a5ae9057c42587da277535a50028c37c7de34b3d259e14bc70ec247fe9"
+    },
+    {
+      "source": "https://blsmy.com/images/loyality.png",
+      "local": "assets/original/loyality.png",
+      "alt": "نقاط الولاء",
+      "bytes": 7604,
+      "sha256": "d2f9957bc0fae8be0d3780837e332496aa7201de066ddd369571c0289ec19c2a"
+    },
+    {
+      "source": "https://blsmy.com/_next/static/media/ghayem.37jxozqdtnayw.png",
+      "local": "assets/original/ghayem.37jxozqdtnayw.png",
+      "alt": "",
+      "bytes": 70583,
+      "sha256": "92f34b032f087be1d8410dbd24e72bfb1720542474febc416dccd2a65a8ea53b"
+    },
+    {
+      "source": "https://blsmy.com/_next/static/media/sahha.09an2-elivfl2.jpeg",
+      "local": "assets/original/sahha.09an2-elivfl2.jpeg",
+      "alt": "",
+      "bytes": 4717,
+      "sha256": "24e6bcd5a8264efb3540d312b5d56059977d53382020ee38004f0fbf9598320f"
+    },
+    {
+      "source": "https://blsmy.com/_next/static/media/bilal.1idots4xgdc_7.jpeg",
+      "local": "assets/original/bilal.1idots4xgdc_7.jpeg",
+      "alt": "",
+      "bytes": 21932,
+      "sha256": "579ca8004585dcc10f81d735dd69057a84260f9cba7764d54614d528aa7d1592"
+    },
+    {
+      "source": "https://blsmy.com/images/dammam.png",
+      "local": "assets/original/dammam.png",
+      "alt": "partner1",
+      "bytes": 17534,
+      "sha256": "bac35d7face82f85e86b41c9925a54b486f54ad46b0016ae97e384a38342de84"
+    },
+    {
+      "source": "https://blsmy.com/images/ghaym.png",
+      "local": "assets/original/ghaym.png",
+      "alt": "partner1",
+      "bytes": 42709,
+      "sha256": "3bc9c059b583fb0a3f8c15cd1c240ba012474eb6ae6d870e96358dee91cc75fc"
+    },
+    {
+      "source": "https://blsmy.com/images/wecare.png",
+      "local": "assets/original/wecare.png",
+      "alt": "partner1",
+      "bytes": 13847,
+      "sha256": "b8f78ed7c8ac4c05e605fb19af54f2afd7eb65ca15677c78a093f20abc764333"
+    },
+    {
+      "source": "https://blsmy.com/images/alsahha.png",
+      "local": "assets/original/alsahha.png",
+      "alt": "partner1",
+      "bytes": 12313,
+      "sha256": "9c807602929fa73a7787c196095417e52deb6c8af9a94e84090e4c83f8769ba3"
+    },
+    {
+      "source": "https://blsmy.com/images/ahaleena.png",
+      "local": "assets/original/ahaleena.png",
+      "alt": "partner1",
+      "bytes": 31966,
+      "sha256": "7bfcdc4c375ddaf923be95ded5fd1563f3a566ed16ed878b3dcbcb924856d9e9"
+    },
+    {
+      "source": "https://blsmy.com/images/ghayatcom.png",
+      "local": "assets/original/ghayatcom.png",
+      "alt": "partner1",
+      "bytes": 36699,
+      "sha256": "ba2d0d8f99f7ebdf33dce1de32903b2ccd92d15caeed669eb1ebb196b517ff30"
+    },
+    {
+      "source": "https://blsmy.com/images/deryaq.png",
+      "local": "assets/original/deryaq.png",
+      "alt": "partner1",
+      "bytes": 16326,
+      "sha256": "259ee9259b962ef5239153a19c55553449acfd9221384a79e333a222bbb74f3e"
+    },
+    {
+      "source": "https://blsmy.com/images/hayatClinics.png",
+      "local": "assets/original/hayatClinics.png",
+      "alt": "partner1",
+      "bytes": 16892,
+      "sha256": "e6e0b490b23d210de4706497a5c536f24e55e90f1f70b8805f96817327e2e4f0"
+    },
+    {
+      "source": "https://blsmy.com/images/caremark.jpeg",
+      "local": "assets/original/caremark.jpeg",
+      "alt": "partner1",
+      "bytes": 8819,
+      "sha256": "9fb972a80b1dc1c5dafaad458bc3742d9dbe872ba692caa4d7817c9c6dc2b709"
+    },
+    {
+      "source": "https://blsmy.com/images/bright.png",
+      "local": "assets/original/bright.png",
+      "alt": "partner1",
+      "bytes": 25723,
+      "sha256": "6a9bcacf525a813ec542ed852182ea14fa6c18194cc6629b736ec4184c02d6f7"
+    },
+    {
+      "source": "https://blsmy.com/images/ozone.png",
+      "local": "assets/original/ozone.png",
+      "alt": "partner1",
+      "bytes": 20613,
+      "sha256": "eba4ef149e6b9c7c6b0417fedc33895d42ad99c0e0c04b2efbf89c0fb1307b9c"
+    },
+    {
+      "source": "https://blsmy.com/images/anfas.jpeg",
+      "local": "assets/original/anfas.jpeg",
+      "alt": "partner1",
+      "bytes": 10472,
+      "sha256": "4a5d1285a8b874e691e687c830ac8219910c67694256eadc1e84c4df9610e9e9"
+    },
+    {
+      "source": "https://blsmy.com/images/faraby.png",
+      "local": "assets/original/faraby.png",
+      "alt": "partner1",
+      "bytes": 13528,
+      "sha256": "498c37c1aa35680806e8a33969ceea55204cd464af6f4cc418ca470d66a9f859"
+    },
+    {
+      "source": "https://blsmy.com/images/bella.png",
+      "local": "assets/original/bella.png",
+      "alt": "partner1",
+      "bytes": 7543,
+      "sha256": "276915f4885eeabd779a07678ca66452987e0d94b9833e4096ab636b9c9f88d4"
+    },
+    {
+      "source": "https://blsmy.com/images/somu.png",
+      "local": "assets/original/somu.png",
+      "alt": "partner1",
+      "bytes": 17332,
+      "sha256": "4452091a9cc29d21567ba8cb7f0d21ac41cd9d1e3fe49abeb17880cdc35fccd4"
+    },
+    {
+      "source": "https://blsmy.com/images/baseem.png",
+      "local": "assets/original/baseem.png",
+      "alt": "partner1",
+      "bytes": 5571,
+      "sha256": "f4b683061494a3cba1724ff9136822fa5cac70eef67d6ef9c120b3864d7d035f"
+    },
+    {
+      "source": "https://blsmy.com/images/ruhaimi.jpeg",
+      "local": "assets/original/ruhaimi.jpeg",
+      "alt": "partner1",
+      "bytes": 15453,
+      "sha256": "6502a7f068d5f8303ac5fc189851cd3460d7d37f4230c5fb4abc910ff9aa5cb9"
+    },
+    {
+      "source": "https://blsmy.com/images/dpmc.jpeg",
+      "local": "assets/original/dpmc.jpeg",
+      "alt": "partner1",
+      "bytes": 10116,
+      "sha256": "75021fd4cabced304d2d34b07d643679a62fbd3733da4cad8a422dd9869aa6ae"
+    },
+    {
+      "source": "https://blsmy.com/images/pearl.png",
+      "local": "assets/original/pearl.png",
+      "alt": "partner1",
+      "bytes": 35243,
+      "sha256": "ae137e1582a5952afa4058ed34560f1d8ef462848e315f4c2fee5d1f4d6540dc"
+    },
+    {
+      "source": "https://blsmy.com/images/badri.png",
+      "local": "assets/original/badri.png",
+      "alt": "partner1",
+      "bytes": 17741,
+      "sha256": "0c9ae3ea3b33abee66d6f0566788097aae5f4e046fb5c69d181c17df64946a56"
+    },
+    {
+      "source": "https://blsmy.com/images/smiles.jpg",
+      "local": "assets/original/smiles.jpg",
+      "alt": "partner1",
+      "bytes": 18339,
+      "sha256": "d69f18f59c4180ed219cf35a2334e7bee8c75d51c2113d02e03c0ccdc08d95c7"
+    },
+    {
+      "source": "https://blsmy.com/images/adwaa.jpg",
+      "local": "assets/original/adwaa.jpg",
+      "alt": "partner1",
+      "bytes": 13024,
+      "sha256": "906c17ce4f4c0ab514302fa05036ff825ec3d529bc6b70def33787a0b86d5fb8"
+    },
+    {
+      "source": "https://blsmy.com/images/alhesn.jpeg",
+      "local": "assets/original/alhesn.jpeg",
+      "alt": "partner1",
+      "bytes": 17622,
+      "sha256": "aa0faa94149cfdfd79b2aefec11a9ee1b05ac70dc6580f358eb942e6bad4b3fa"
+    },
+    {
+      "source": "https://blsmy.com/images/fmg.jpeg",
+      "local": "assets/original/fmg.jpeg",
+      "alt": "partner1",
+      "bytes": 13892,
+      "sha256": "53907caf2b6e41f19c3e10014871b83ec9bd4b533e11ec547cbb412c72217488"
+    },
+    {
+      "source": "https://blsmy.com/images/lmg.jpeg",
+      "local": "assets/original/lmg.jpeg",
+      "alt": "partner1",
+      "bytes": 13592,
+      "sha256": "fb23c6464a327bc48fc1079838413851ff30537806698029671e4521ab72fb56"
+    },
+    {
+      "source": "https://blsmy.com/images/screenshot5.webp",
+      "local": "assets/original/screenshot5.webp",
+      "alt": "Screenshot 1",
+      "bytes": 19286,
+      "sha256": "d77050a81ce196509c79697d24978c07deb11b252d82f594838516a3916e47e4"
+    },
+    {
+      "source": "https://blsmy.com/images/screenshot4.webp",
+      "local": "assets/original/screenshot4.webp",
+      "alt": "Screenshot 2",
+      "bytes": 27240,
+      "sha256": "b38805a8e022f77b6d113224ae6d9f34042e19a51c594b8fee2d17bd3094085a"
+    },
+    {
+      "source": "https://blsmy.com/images/screenshot3.webp",
+      "local": "assets/original/screenshot3.webp",
+      "alt": "Screenshot 3",
+      "bytes": 18050,
+      "sha256": "f523d3df6cc6c507ace46bed624a90c4e284e4953cc69e089b7b499bc4650262"
+    },
+    {
+      "source": "https://blsmy.com/images/screenshot2.webp",
+      "local": "assets/original/screenshot2.webp",
+      "alt": "Screenshot 4",
+      "bytes": 25142,
+      "sha256": "5dd44c84b97ae767d3f2ad01a8ceaa3d9d0bbbeb9ef8d88f3d060f2e6600cff4"
+    },
+    {
+      "source": "https://blsmy.com/images/screenshot1.webp",
+      "local": "assets/original/screenshot1.webp",
+      "alt": "Screenshot 5",
+      "bytes": 24112,
+      "sha256": "f128151896ea322008a27ee805c2c83e9e2b807681c80a16eb27dcfc3550b5a6"
+    },
+    {
+      "source": "https://blsmy.com/images/logo-white.webp",
+      "local": "assets/original/logo-white.webp",
+      "alt": "Logo",
+      "bytes": 12704,
+      "sha256": "a3f2f239b53c84f650d76282d682659110d9c4895f9ed89efa983ef2cc4b490d"
+    },
+    {
+      "source": "https://blsmy.com/images/mastercard.png",
+      "local": "assets/original/mastercard.png",
+      "alt": "payment1",
+      "bytes": 2819,
+      "sha256": "95e5f3ca8d1d0ea321fe192db594ef2b63257b399ce3a553cd90a60f159f56cf"
+    },
+    {
+      "source": "https://blsmy.com/images/visa.png",
+      "local": "assets/original/visa.png",
+      "alt": "payment2",
+      "bytes": 2557,
+      "sha256": "abf7162f5d5fea66c5f4d314f70a32051e72fdcde99e66bb4c708c1ef4025005"
+    },
+    {
+      "source": "https://blsmy.com/images/applePay.png",
+      "local": "assets/original/applePay.png",
+      "alt": "payment3",
+      "bytes": 2211,
+      "sha256": "1b1d53b79fab6dae667349917056dd4ccd40de04f2b8ec2aaeb8194c06221708"
+    },
+    {
+      "source": "https://blsmy.com/images/mada.png",
+      "local": "assets/original/mada.png",
+      "alt": "payment4",
+      "bytes": 9123,
+      "sha256": "beeff09c3edfaca204b9445fda78d86efa48b0d47dbf539cbdf616dbd26440b3"
+    },
+    {
+      "source": "https://blsmy.com/images/tabby.svg",
+      "local": "assets/original/tabby.svg",
+      "alt": "payment5",
+      "bytes": 2528,
+      "sha256": "3bd558f4fde6d2c2a1c7041cc913ec13fd84b94f71163dd512fdb28b92ed2979"
+    },
+    {
+      "source": "https://blsmy.com/images/vat.png",
+      "local": "assets/original/vat.png",
+      "alt": "",
+      "bytes": 19319,
+      "sha256": "b6c2838b0976e657193eef1715f75edb61f88483926d8edf068cada7fb8d094c"
+    },
+    {
+      "source": "https://blsmy.com/images/sbc.png",
+      "local": "assets/original/sbc.png",
+      "alt": "",
+      "bytes": 26233,
+      "sha256": "bc635b213a5424241ba5801ecffa9b2697f0cf7d56b0886cb6780c4cc033df34"
+    },
+    {
+      "source": "https://blsmy.com/_next/static/media/hero-bg.1pm_ybpsucqw5.webp",
+      "local": "assets/original/hero-bg.1pm_ybpsucqw5.webp",
+      "alt": "خلفية الواجهة الأصلية",
+      "bytes": 13864,
+      "sha256": "743f6a80b3e5649fe9d5ec50b26b4cf55de95da1302886eae749dbfe11a22109"
+    }
+  ]
+}

@@ -1,174 +1,204 @@
 @if (page() === 'home') {
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow"><span class="status-dot"></span> صحتك، أقرب مما تتخيل</span>
-      <h1>
-        كل خطوة لصحتك،<br /><span
-          >تبدأ مع
-          <span class="word-mark"
-            >بلسمي<svg viewBox="0 0 250 18" aria-hidden="true">
-              <path d="M3 12 Q120 -2 247 9" /></svg></span
-          >.</span
-        >
-      </h1>
+<div class="original-home">
+  <section class="source-hero">
+    <div class="source-hero-image" aria-hidden="true"></div>
+    <div class="container source-hero-copy">
+      <span class="eyebrow"><span class="status-dot"></span> بلسمي</span>
+      <h1>منصتك ...<br /><span>لحلول صحية ذكية</span></h1>
       <p>
-        من اختيار المركز المناسب إلى حجز موعدك.<br />نجمع لك الرعاية في مكان واحد، لتطمئن أكثر
-        وتنشغل أقل.
+        بلسمي منصة رقمية تجمع المراكز الطبية والعملاء تحت سقف واحد،<br class="desktop-break" />
+        لتسهيل إدارة وحجز المواعيد والتحكم بجداول الأطباء والعيادات بكل سهولة.
       </p>
-      <div class="hero-actions">
-        <a routerLink="/book" class="button">احجز موعدك الآن <span aria-hidden="true">↖</span></a
-        ><a routerLink="/hospitals" class="text-link"
-          >اكتشف المراكز الطبية <span aria-hidden="true">←</span></a
-        >
+      <div class="source-hero-actions">
+        <a href="https://blsmy.com/book-reservations" class="button"
+          >احجز عبر بلسمي <span aria-hidden="true">↗</span></a
+        ><a href="#blsmy-services" class="text-link">اكتشف خدمات بلسمي ↓</a>
       </div>
-      <div class="hero-proof">
-        <span class="mini-icon">✓</span>
-        <div><strong>رحلة صحية أبسط</strong><small>اختر. اطلب موعدك. واهتم بنفسك.</small></div>
-        <span class="proof-line"></span><span class="mini-icon coral-bg">♡</span>
-        <div><strong>أنت محور الاهتمام</strong><small>خيارات تناسبك وتناسب عائلتك</small></div>
-      </div>
+      <form
+        ngNoForm
+        class="source-hero-search original-search-form"
+        action="https://blsmy.com/SearchHome"
+        method="get"
+      >
+        <label
+          ><span class="sr-only">ابحث عن طبيب أو عيادة أو مركز</span
+          ><input
+            name="searchtext"
+            type="search"
+            required
+            maxlength="150"
+            placeholder="ابحث عن طبيب أو عيادة أو مركز" /></label
+        ><button class="button" type="submit">
+          بحث في بلسمي <span aria-hidden="true">↗</span>
+        </button>
+      </form>
+      <a routerLink="/hospitals" class="local-directory-link">أو استعرض شركاء بلسمي هنا ←</a>
     </div>
-    <div class="hero-art">
-      <div class="hero-photo">
-        <img
-          src="assets/healthcare-hero.webp"
-          alt="صورة توضيحية لطبيبة في بيئة رعاية هادئة"
-          width="1024"
-          height="683"
-          fetchpriority="high"
-        /><span class="image-note">صورة توضيحية</span>
-      </div>
-      <div class="floating-tag top">
-        <span class="float-icon">✚</span>
-        <div><strong>رعاية تبدأ بالاهتمام</strong><small>وقتك وصحتك يستحقان</small></div>
-      </div>
-      <div class="floating-tag bottom">
-        <span class="float-icon coral-bg">▦</span>
-        <div><strong>موعدك، بخطوات أسهل</strong><small>اختيارات أوضح. تجربة أريح.</small></div>
-        <span class="check-badge">✓</span>
-      </div>
-      <span class="art-spark" aria-hidden="true">✳</span>
+    <div class="hero-side-label"><span></span> رعاية متكاملة. تجربة أسهل.</div>
+  </section>
+
+  <section class="container source-booking" aria-label="حجز موعد" appReveal>
+    <div class="source-booking-icon">
+      <img src="assets/original/stat-0.svg" alt="" width="42" height="42" />
     </div>
-  </div>
-</section>
-<section class="search-section container" aria-label="البحث عن مركز طبي">
-  <form class="search-panel" (ngSubmit)="search()">
-    <div class="search-intro">
-      <span class="search-symbol">⌕</span>
-      <div><strong>رعايتك تبدأ من هنا</strong><small>ابحث عن المركز المناسب لك</small></div>
-    </div>
-    <label
-      >المدينة<select name="city" [ngModel]="city()" (ngModelChange)="city.set($event)">
-        <option value="all">جميع المدن</option>
-        <option value="riyadh">الرياض</option>
-        <option value="jeddah">جدة</option>
-        <option value="dammam">الدمام</option>
-      </select></label
-    ><label class="search-query"
-      >المركز الطبي<input
-        name="query"
-        [ngModel]="query()"
-        (ngModelChange)="query.set($event)"
-        placeholder="اكتب اسم المركز أو المدينة" /></label
-    ><button class="button" type="submit">ابحث الآن <span aria-hidden="true">⌕</span></button>
-  </form>
-</section>
-<section class="section container">
-  <div class="section-head">
     <div>
-      <span class="eyebrow">رعاية تناسب كل احتياج</span>
-      <h2>أنت تختار، ونحن نسهّل الطريق</h2>
+      <h2>هل ترغب بحجز موعد؟</h2>
+      <p>احجز موعدك لدى إحدى المراكز بخطوات بسيطة...</p>
     </div>
-    <a routerLink="/offers" class="text-link">استكشف الخدمات <span aria-hidden="true">←</span></a>
-  </div>
-  <div class="specialty-grid">
-    @for (s of specialties; track s.key) {<a
-      routerLink="/book"
-      [queryParams]="{specialty:s.name}"
-      class="specialty"
-      ><span class="specialty-icon" aria-hidden="true">{{s.icon}}</span>
-      <h3>{{s.name}}</h3>
-      <p>{{s.description}}</p>
-      <span class="small-arrow" aria-hidden="true">↖</span></a
-    >}
-  </div>
-</section>
-<section class="how-section">
-  <div class="container how-grid">
-    <div>
-      <span class="eyebrow">من البحث إلى الاطمئنان</span>
-      <h2>ثلاث خطوات.<br />واهتمامٌ <span class="coral">يدوم.</span></h2>
-      <p>رتّب زيارتك القادمة ببساطة، واترك مساحة أكبر لما يهمك.</p>
-      <a routerLink="/book" class="text-link">ابدأ رحلتك الصحية ←</a>
+    <div class="booking-channel-actions">
+      <a href="https://blsmy.com/book-reservations" class="button">احجز الآن عبر بلسمي ↗</a
+      ><a routerLink="/book" class="text-link">طلب موعد عبر واتساب ←</a>
     </div>
-    <div class="steps-list">
-      @for (item of [{n:'01',title:'اختر المركز والخدمة',text:'تصفح المراكز وحدد التخصص الذي تبحث
-      عنه.'},{n:'02',title:'جهّز طلب موعدك',text:'أضف تفاصيل التواصل والتاريخ المفضل
-      لزيارتك.'},{n:'03',title:'تواصل وأكّد الموعد',text:'أرسل طلبك عبر واتساب، أو أكمل الحجز من
-      التطبيق.'}]; track item.n) {
-      <div class="step-row">
-        <span>{{item.n}}</span>
-        <div>
-          <h3>{{item.title}}</h3>
-          <p>{{item.text}}</p>
+  </section>
+
+  <section class="container source-stats" aria-label="بلسمي بالأرقام" appReveal>
+    @for(stat of stats; track stat.label) {
+    <div class="source-stat">
+      <img [src]="'assets/original/'+stat.icon" alt="" width="35" height="35" /><strong dir="ltr"
+        >{{stat.value}}<span>+</span></strong
+      ><span>{{stat.label}}</span>
+    </div>
+    }
+  </section>
+
+  <section class="container section source-services" id="blsmy-services">
+    <div class="source-section-heading" appReveal>
+      <span class="eyebrow">حلول تهتم بكل التفاصيل</span>
+      <h2>خدمات بلسمي</h2>
+      <p>للمراجعين والمراكز الطبية، تجربة صحية أكثر سهولة.</p>
+    </div>
+    <div class="source-featured-grid">
+      @for(service of featuredServices; track service.id) {
+      <article class="source-featured" appReveal>
+        <div class="source-featured-art">
+          <img
+            [src]="service.image"
+            [alt]="service.title"
+            width="110"
+            height="110"
+            loading="lazy"
+          />
         </div>
-        <span class="step-check">✓</span>
+        <h3>{{service.title}}</h3>
+        <p>{{service.description}}</p>
+        <a routerLink="/contact" [queryParams]="{subject:service.title}" class="text-link"
+          >اعرف المزيد <span aria-hidden="true">←</span></a
+        >
+      </article>
+      }
+    </div>
+    <div class="source-secondary-grid" appReveal>
+      @for(service of secondaryServices; track service.id){<a
+        routerLink="/services"
+        [queryParams]="{q:service.title}"
+        class="source-service-item"
+        ><img [src]="service.image" [alt]="service.title" width="56" height="56" loading="lazy" />
+        <h3>{{service.title}}</h3></a
+      >}
+    </div>
+    <div class="source-upcoming" appReveal>
+      <span class="upcoming-label">المزيد من حلول بلسمي</span>
+      <div>
+        @for(service of additionalServices; track service.id){<a
+          routerLink="/services"
+          [queryParams]="{q:service.title}"
+          class="source-service-item"
+          ><img [src]="service.image" [alt]="service.title" width="54" height="54" loading="lazy" />
+          <h3>{{service.title}}</h3></a
+        >}
+      </div>
+    </div>
+    <div class="section-more">
+      <a routerLink="/services" class="button outline">اكتشف كل الخدمات ←</a>
+    </div>
+  </section>
+
+  <section class="source-reviews-band">
+    <div class="container section">
+      <div class="source-section-heading" appReveal>
+        <span class="eyebrow">ثقة نعتز بها</span>
+        <h2>آراء الشركاء</h2>
+      </div>
+      <div class="source-reviews-grid">
+        @for(review of testimonials; track review.id){
+        <article class="source-review" appReveal>
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <blockquote>{{review.content}}</blockquote>
+          <div class="review-person">
+            <img
+              [src]="review.avatar"
+              [alt]="review.author"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+            <div>
+              <h3>{{review.author}}</h3>
+              <span>{{review.role}}</span>
+            </div>
+          </div>
+        </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="container section source-partners" appReveal>
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">معًا، لرحلة صحية أفضل</span>
+        <h2>شركاؤنا</h2>
+      </div>
+      <div class="carousel-controls">
+        <button (click)="scrollPartners(partnerTrack, 1)" aria-label="الشركاء السابقون">→</button
+        ><button (click)="scrollPartners(partnerTrack, -1)" aria-label="الشركاء التاليون">←</button>
+      </div>
+    </div>
+    <div
+      class="source-partner-track"
+      #partnerTrack
+      tabindex="0"
+      aria-label="شعارات شركاء بلسمي، اسحب لاستعراض المزيد"
+    >
+      @for(partner of partners; track partner.id){
+      <div class="source-partner-logo">
+        <img [src]="partner.logo" [alt]="partner.name" width="160" height="90" loading="lazy" />
       </div>
       }
     </div>
-  </div>
-</section>
-<section class="section container">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">خلف كل رعاية، شريك</span>
-      <h2>تعرّف على المراكز الطبية</h2>
+    <p class="carousel-hint">اسحب لاستعراض شركائنا <span aria-hidden="true">↔</span></p>
+  </section>
+
+  <section class="container section source-app-gallery" appReveal>
+    <div class="source-section-heading">
+      <span class="eyebrow">بلسمي، في متناول يدك</span>
+      <h2>حمل تطبيق بلسمي لحجز مواعيدك بسهولة</h2>
+      <p>خدماتك ومواعيدك والمراكز الطبية، في تطبيق واحد.</p>
     </div>
-    <a routerLink="/hospitals" class="text-link">جميع المراكز ←</a>
-  </div>
-  <div class="center-grid">
-    @for(h of hospitals; track h.id){
-    <article class="center-card">
-      <div class="center-visual">
-        <span class="center-monogram">{{h.name.split(' ')[1]}}</span
-        ><span class="location-pill">⌖ {{h.location}}</span>
-      </div>
-      <div class="card-body">
-        <span class="muted small">مركز طبي</span>
-        <h3>{{h.name}}</h3>
-        <p>تعرف على الخدمات والتوفر من خلال فريق بلسمي.</p>
-        <a routerLink="/book" [queryParams]="{center:h.name}" class="text-link"
-          >استفسر عن موعد <span>←</span></a
-        >
-      </div>
-    </article>
-    }
-  </div>
-  <p class="footnote">يُرجى التأكد من خدمات المركز والتوفر قبل إتمام الحجز.</p>
-</section>
-<section class="container business-section">
-  <div class="business-image">
-    <img
-      src="assets/clinic-interior.webp"
-      alt="تصور توضيحي لاستقبال مركز طبي حديث"
-      width="1024"
-      height="683"
-      loading="lazy"
-    /><span class="image-note">صورة توضيحية</span>
-  </div>
-  <div class="business-copy">
-    <span class="eyebrow">للمراكز الطبية</span>
-    <h2>اهتم بمراجعيك.<br />ودع التقنية <span>تساندك.</span></h2>
-    <p>حلول رقمية لإدارة المواعيد، وتنظيم رحلة المراجع، وبناء حضور رقمي يعكس هوية مركزك.</p>
-    <ul class="check-list">
-      <li>حجز مواعيد وتنظيم جداول العيادات</li>
-      <li>تذكيرات وتقييمات لتحسين تجربة المراجع</li>
-      <li>تطبيق خاص وحلول تناسب احتياج منشأتك</li>
-    </ul>
-    <a routerLink="/prices" class="button">اكتشف حلول المراكز ↖</a>
-  </div>
-</section>
+    <div class="original-app-shots">
+      @for(screen of appScreens;track screen;let i=$index){<img
+        [src]="'assets/original/'+screen"
+        [alt]="'لقطة أصلية من تطبيق بلسمي '+(i+1)"
+        width="514"
+        height="1049"
+        loading="lazy"
+        [class.center-shot]="i===2"
+      />}
+    </div>
+    <div class="source-store-links">
+      <a href="https://apps.apple.com/sa/app/id1609392362" target="_blank" rel="noopener noreferrer"
+        ><span class="store-symbol">●</span
+        ><span><small>حمّله من</small><strong>App Store</strong></span></a
+      ><a
+        href="https://play.google.com/store/apps/details?id=sa.balsam"
+        target="_blank"
+        rel="noopener noreferrer"
+        ><span class="store-symbol">▷</span
+        ><span><small>متوفر على</small><strong>Google Play</strong></span></a
+      >
+    </div>
+  </section>
+</div>
 } @if (page() !== 'home') {
 <section class="page-heading">
   <div class="container">
@@ -194,8 +224,8 @@
       آخر.':'نسمعك. ونساعدك.'}}
     </h1>
     <p>
-      {{page()==='hospitals'?'ابحث عن المركز والمدينة، ثم تواصل لمعرفة الخدمات والمواعيد
-      المتاحة.':page()==='book'?'جهّز طلب موعدك وأرسله إلى فريق بلسمي. الموعد يخضع للتوفر
+      {{page()==='hospitals'?'تعرف على شركاء بلسمي وابحث بالاسم، أو افتح النظام الأصلي للمراكز
+      والمواعيد المحدثة.':page()==='book'?'جهّز طلب موعدك وأرسله إلى فريق بلسمي. الموعد يخضع للتوفر
       والتأكيد.':page()==='prices'?'من تنظيم المواعيد إلى حضور رقمي متكامل، اختر نقطة البداية
       المناسبة.':page()==='services'?'حلول تجمع راحة المراجع وكفاءة المركز الطبي في تجربة
       واحدة.':page()==='offers'?'استكشف مجالات الرعاية، واطّلع على العروض والأسعار المحدثة في تطبيق
@@ -227,15 +257,20 @@
     @for(s of filteredServices();track s.id){
     <article class="service-card">
       <div class="service-top">
-        <span class="specialty-icon" aria-hidden="true">{{serviceIcon(s.icon)}}</span
-        >@if(s.comingSoon){<span class="tag">قريبًا</span>}
+        <img
+          class="original-service-icon"
+          [src]="s.image"
+          [alt]="s.title"
+          width="60"
+          height="60"
+          loading="lazy"
+        />@if(s.comingSoon){<span class="tag">قريبًا</span>}
       </div>
       <h2>{{s.title}}</h2>
-      <p>
-        {{s.description || (s.category==='medical-center'?'حل رقمي يساند تشغيل مركزك وتحسين رحلة
-        المراجع.':'جزء من تجربة بلسمي الرقمية للرعاية الصحية.')}}
-      </p>
-      <a routerLink="/contact" class="text-link"
+      @if(s.description){
+      <p>{{s.description}}</p>
+      }
+      <a routerLink="/contact" [queryParams]="{subject:s.title}" class="text-link"
         >{{s.comingSoon?'استفسر عن الإتاحة':'اعرف المزيد'}} ←</a
       >
     </article>
@@ -251,35 +286,48 @@
 </section>
 } @if(page()==='hospitals') {
 <section class="section container">
+  <div class="notice directory-notice">
+    <div>
+      <strong>قصص النجاح لشركائنا من المراكز الطبية</strong>
+      <p>تعرف على شركاء بلسمي، وللبحث عن المراكز والمواعيد المحدثة افتح النظام الأصلي.</p>
+    </div>
+    <a href="https://blsmy.com/book-reservations" class="button">المراكز والمواعيد ↗</a>
+  </div>
   <div class="filter-row">
     <label class="filter-search grow"
-      >اسم المركز أو المدينة<input
-        placeholder="ابحث هنا…"
+      >اسم المركز الطبي<input
+        placeholder="ابحث عن المركز الطبي…"
         [ngModel]="query()"
         (ngModelChange)="query.set($event)" /></label
-    ><label
-      >المدينة<select [ngModel]="city()" (ngModelChange)="city.set($event)">
-        <option value="all">جميع المدن</option>
-        <option value="riyadh">الرياض</option>
-        <option value="jeddah">جدة</option>
-        <option value="dammam">الدمام</option>
-      </select></label
+    ><a
+      href="https://blsmy.com/hospitals"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-link"
+      >المراكز في منصة بلسمي ↗</a
     >
   </div>
-  <p class="results-count" aria-live="polite">{{filteredHospitals().length}} مراكز في النتائج</p>
-  <div class="center-grid">
-    @for(h of filteredHospitals();track h.id){
+  <p class="results-count" aria-live="polite">
+    {{filteredPartners().length}} من الشركاء في النتائج
+  </p>
+  <div class="center-grid original-center-grid">
+    @for(center of filteredPartners();track center.id){
     <article class="center-card">
       <div class="center-visual">
-        <span class="center-monogram">{{h.name.split(' ')[1]}}</span
-        ><span class="location-pill">⌖ {{h.location}}</span>
+        <img
+          [src]="center.logo"
+          [alt]="center.name"
+          class="hospital-logo"
+          width="160"
+          height="100"
+          loading="lazy"
+        />
       </div>
       <div class="card-body">
-        <span class="muted small">{{h.nameEn}}</span>
-        <h2>{{h.name}}</h2>
-        <p>استفسر عن التخصصات والخدمات المتاحة والتأمين المقبول قبل زيارتك.</p>
-        <a routerLink="/book" [queryParams]="{center:h.name}" class="button outline full"
-          >طلب موعد ←</a
+        <span class="muted small">{{center.nameEn}}</span>
+        <h2>{{center.name}}</h2>
+        <a routerLink="/book" [queryParams]="{center:center.name}" class="button outline full"
+          >طلب موعد عبر واتساب ←</a
         >
       </div>
     </article>
@@ -287,13 +335,14 @@
     <div class="empty-state">
       <span>⌕</span>
       <h2>لا توجد نتائج مطابقة</h2>
-      <p>جرّب مدينة أخرى أو ابحث باسم المركز.</p>
-      <button class="button" (click)="query.set('');city.set('all')">إعادة البحث</button>
+      <p>جرّب اسمًا آخر أو استعرض جميع الشركاء.</p>
+      <button class="button" (click)="query.set('')">عرض كل الشركاء</button>
     </div>
     }
   </div>
   <p class="footnote">
-    للتأكد من خدمات المركز والتأمين المقبول والمواعيد، تواصل مع فريق بلسمي قبل زيارتك.
+    الشعارات من موقع بلسمي الأصلي. يختلف توفر الخدمات والتخصصات حسب المركز، ويؤكد الموعد بعد التحقق
+    منه.
   </p>
 </section>
 } @if(page()==='offers') {
@@ -388,12 +437,12 @@
   </div>
   <figure>
     <img
-      src="assets/clinic-interior.webp"
-      alt="تصور توضيحي لمساحة رعاية مريحة"
+      src="assets/original/hero-bg.1pm_ybpsucqw5.webp"
+      alt="خلفية الرعاية الصحية من موقع بلسمي الأصلي"
       width="1024"
       height="683"
     />
-    <figcaption>صورة توضيحية مولّدة للموقع</figcaption>
+    <figcaption>من صور موقع بلسمي الأصلي</figcaption>
   </figure>
 </section>
 <section class="container values-grid">
@@ -409,6 +458,15 @@
   }
 </section>
 } @if(page()==='book') {
+<section class="container booking-live-choice">
+  <div class="notice directory-notice">
+    <div>
+      <strong>اختر طريقة الحجز المناسبة لك</strong>
+      <p>استخدم نظام بلسمي للمواعيد المباشرة، أو جهّز طلبك عبر النموذج أدناه للتواصل على واتساب.</p>
+    </div>
+    <a href="https://blsmy.com/book-reservations" class="button">الحجز في النظام الأصلي ↗</a>
+  </div>
+</section>
 <section class="section container booking-layout">
   <div class="form-card">
     <ol class="step-indicator">
@@ -428,8 +486,8 @@
     <label
       >المركز الطبي<select [(ngModel)]="booking.center">
         <option value="">اختر المركز</option>
-        @for(h of hospitals;track h.id){
-        <option [value]="h.name">{{h.name}} — {{h.location}}</option>
+        @for(h of partners;track h.id){
+        <option [value]="h.name">{{h.name}}</option>
         }
       </select></label
     ><label
@@ -527,7 +585,12 @@
   <aside class="booking-aside">
     <span class="eyebrow">على راحتك</span>
     <h2>الاهتمام يبدأ<br />بخطوة صغيرة.</h2>
-    <img src="assets/healthcare-hero.webp" alt="صورة توضيحية لطبيبة" width="1024" height="683" />
+    <img
+      src="assets/original/screenshot2.webp"
+      alt="لقطة من واجهة الحجز في تطبيق بلسمي"
+      width="1024"
+      height="683"
+    />
     <ul class="check-list">
       <li>لا يتم الدفع عبر الموقع</li>
       <li>لا تُحفظ بيانات الطلب في المتصفح</li>
@@ -647,14 +710,15 @@
   </p>
   <h2>الخدمات الخارجية</h2>
   <p>
-    روابط واتساب ومتاجر التطبيقات والحسابات الاجتماعية تنقلك إلى خدمات خارجية، وتخضع لتلك الخدمات
-    سياسات الخصوصية الخاصة بها. يُحمّل الخط من Google Fonts عند توفر الإنترنت، ويمكن للمتصفح استخدام
-    خط الجهاز بديلًا.
+    روابط نظام بلسمي الأصلي والبحث وواتساب ومتاجر التطبيقات والحسابات الاجتماعية تنقلك إلى خدمات
+    خارجية، وتخضع لتلك الخدمات سياسات الخصوصية الخاصة بها. يُحمّل الخط من Google Fonts عند توفر
+    الإنترنت، ويمكن للمتصفح استخدام خط الجهاز بديلًا.
   </p>
   <h2>دقة المعلومات</h2>
   <p>
-    الصور المنشأة للموقع توضيحية وليست صورًا لأطباء أو منشآت محددة. قد تتغير المراكز والخدمات
-    والأسعار؛ راجع المركز أو فريق بلسمي قبل إتمام الحجز. يمكنك مراجعة
+    تستخدم الواجهة الشعارات والأيقونات وصور التطبيق والصور المنشورة في موقع بلسمي الأصلي، مع
+    المحافظة على هوياتها. الإحصاءات وآراء الشركاء من المحتوى المنشور في المصدر. قد تتغير المراكز
+    والخدمات والأسعار؛ راجع المركز أو فريق بلسمي قبل إتمام الحجز. يمكنك مراجعة
     <a href="https://blsmy.com/terms" target="_blank" rel="noopener noreferrer"
       >السياسات المنشورة في موقع بلسمي ↗</a
     >
@@ -673,24 +737,30 @@
     <h2>{{page()==='jobs'?'نحب الأفكار التي تسهّل الحياة.':'لنبدأ من احتياج مركزك.'}}</h2>
     <p class="large-copy">
       {{page()==='jobs'?'مهتم بالعمل على تجربة رعاية رقمية أفضل؟ عرّفنا بنفسك واهتماماتك عبر فريق
-      بلسمي.':'هل تستخدم بلسمي أو ترغب في الانضمام؟ تواصل مع الفريق للحصول على رابط الدخول المعتمد
-      أو ترتيب عرض توضيحي.'}}
+      بلسمي.':'هل تستخدم بلسمي أو ترغب في الانضمام؟ افتح بوابة المراكز الطبية عبر الرابط المعتمد، أو
+      تواصل مع الفريق لترتيب عرض توضيحي.'}}
     </p>
     <p>
       {{page()==='jobs'?'لا توجد وظائف محددة معلنة في هذه النسخة. يمكنك التواصل للاستفسار عن الفرص
       المتاحة.':'لحماية بيانات المراكز، لا نطلب كلمات مرور أو بيانات دخول عبر هذا الموقع
       التعريفي.'}}
     </p>
-    <a routerLink="/contact" class="button">تواصل مع الفريق ←</a>
+    @if(page()==='portal'){<a
+      href="https://medical.blsmy.com"
+      class="button"
+      target="_blank"
+      rel="noopener noreferrer"
+      >الدخول إلى بوابة المراكز ↗</a
+    >}@else{<a routerLink="/contact" class="button">تواصل مع الفريق ←</a>}
   </div>
   <figure>
     <img
-      src="assets/clinic-interior.webp"
-      alt="بيئة طبية توضيحية حديثة"
+      src="assets/original/hero-bg.1pm_ybpsucqw5.webp"
+      alt="صورة الرعاية الصحية الأصلية من بلسمي"
       width="1024"
       height="683"
     />
-    <figcaption>صورة توضيحية</figcaption>
+    <figcaption>من صور موقع بلسمي الأصلي</figcaption>
   </figure>
 </section>
 } @if(page()==='404') {
@@ -700,7 +770,7 @@
   <p>يمكنك العودة للرئيسية أو اكتشاف خدمات بلسمي.</p>
   <a routerLink="/" class="button">العودة للرئيسية ←</a>
 </section>
-} @if(page()==='home' || page()==='about' || page()==='offers') {
+} @if(page()==='about' || page()==='offers') {
 <section class="container section">
   <div class="download-banner">
     <div>
@@ -723,26 +793,18 @@
         >
       </div>
     </div>
-    <div class="phone-mock" aria-label="تصور توضيحي لواجهة حجز وليس لقطة من التطبيق">
-      <div class="phone-speaker"></div>
-      <span class="phone-brand">✦ بلسمي</span>
-      <p>أهلًا بك 👋<br /><strong>كيف نعتني بك اليوم؟</strong></p>
-      <div class="phone-search">⌕ ابحث عن رعايتك</div>
-      <div class="phone-categories">
-        <span>✚<small>طب عام</small></span
-        ><span>◇<small>أسنان</small></span
-        ><span>✧<small>جلدية</small></span>
-      </div>
-      <div class="phone-appointment">
-        <span>▦</span>
-        <div><small>موعدك القادم</small><strong>رحلتك الصحية تبدأ هنا</strong></div>
-      </div>
-      <span class="mock-label">تصور توضيحي للواجهة</span>
-    </div>
+    <img
+      class="download-real-shot"
+      src="assets/original/screenshot2.webp"
+      alt="لقطة أصلية من تطبيق بلسمي"
+      width="514"
+      height="1049"
+      loading="lazy"
+    />
     <span class="banner-decoration" aria-hidden="true">✳</span>
   </div>
 </section>
-} @if(page()==='home' || page()==='prices' || page()==='book') {
+} @if(page()==='prices' || page()==='book') {
 <section class="section container faq-section">
   <div>
     <span class="eyebrow">أجوبة تطمئنك</span>

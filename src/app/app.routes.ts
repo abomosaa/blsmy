@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { ExperiencePage } from './experience/page';
 export const routes: Routes = [
   ...[
-    ['', 'home', 'بلسمي | صحة أقرب، حياة أسهل'],
+    ['', 'home', 'بلسمي | منصتك لحلول صحية ذكية'],
     ['services', 'services', 'خدمات بلسمي'],
     ['hospitals', 'hospitals', 'المراكز الطبية | بلسمي'],
     ['offers', 'offers', 'الخدمات والعروض | بلسمي'],

@@ -1,47 +1,80 @@
 import { Component, computed, inject, signal, DestroyRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { SERVICES } from '../core/data/services.data';
-import { HOSPITALS } from '../core/data/hospitals.data';
+import { TESTIMONIALS } from '../core/data/testimonials.data';
+import { PARTNERS } from '../core/data/partners.data';
+import { RevealDirective } from './reveal';
 
 @Component({
   selector: 'app-experience-page',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, RevealDirective],
   templateUrl: './page.html',
 })
 export class ExperiencePage {
   route = inject(ActivatedRoute);
-  router = inject(Router);
   page = signal('home');
   query = signal('');
-  city = signal('all');
   category = signal('all');
-  private descriptions: Record<string, string> = {
-    '5': 'أكواد ترويجية لدعم حملات مركزك وربطها بعروض الخدمات.',
-    '6': 'عرض خدمات ومنتجات المركز في متجر إلكتروني ضمن الحلول المتفق عليها.',
-    '7': 'مساحة رقمية تعرّف بمركزك وتعرض خدماته وطرق التواصل معه.',
-    '8': 'تذكيرات بالمواعيد تساعد المراجع على تنظيم زيارته القادمة.',
-    '9': 'خيارات سداد إلكتروني ضمن الخدمات المتاحة للمركز حسب الإعداد والاتفاق.',
-    '10': 'خيارات ربط تقني تُدرس وفق أنظمة المركز ومتطلبات التكامل.',
-    '11': 'تسجيل وصول المراجع بخطوات ذاتية ضمن تجربة المركز الرقمية.',
-    '12': 'تنظيم بيانات التأمين ضمن الحلول المتاحة؛ قبول التغطية يُؤكد لدى المركز.',
-    '13': 'الوصول إلى نتائج المختبر والوصفات وتقارير الأشعة حسب ربط المركز وإتاحتها.',
-    '14': 'تنظيم نطاق الحجوزات وفق احتياجات المركز وجداول عياداته.',
-    '15': 'تعريف المراجعين بمركزك وخدماته عبر حضوره في منصة بلسمي.',
-    '16': 'حل يساعد المنشآت على تنظيم احتياجات التوظيف ضمن خدماتها الرقمية.',
-    '17': 'عرض مركزك في تطبيق بلسمي ليسهل التعرف على خدماته وطلب موعد.',
-    '18': 'تنظيم طلبات الزيارات المنزلية لدى المراكز التي توفر هذه الخدمة.',
-    '19': 'حل مخطط لمكافأة تفاعل المراجعين؛ استفسر من الفريق عن موعد إتاحته.',
-    '20': 'خيار مخطط للاستشارات عن بُعد؛ استفسر عن الإتاحة والمراكز المشاركة.',
-    '21': 'خدمة دعم موسعة مخطط لها، ويُحدد نطاقها وتوفرها مع الفريق.',
-  };
   services = SERVICES.map((service) => ({
     ...service,
-    description: service.description || this.descriptions[service.id],
+    comingSoon: false,
+    image: service.image?.replace('https://blsmy.com/images/', 'assets/original/'),
   }));
-  hospitals = HOSPITALS;
+  featuredServices = ['1', '2', '4', '3'].map(
+    (id) => this.services.find((service) => service.id === id)!,
+  );
+  secondaryServices = [
+    '11',
+    '10',
+    '9',
+    '8',
+    '7',
+    '6',
+    '5',
+    '18',
+    '17',
+    '16',
+    '15',
+    '14',
+    '13',
+    '12',
+  ].map((id) => this.services.find((service) => service.id === id)!);
+  additionalServices = ['21', '20', '19'].map(
+    (id) => this.services.find((service) => service.id === id)!,
+  );
+  testimonials = TESTIMONIALS.map((review, index) => ({
+    ...review,
+    avatar:
+      'assets/original/' +
+      ['ghayem.37jxozqdtnayw.png', 'sahha.09an2-elivfl2.jpeg', 'bilal.1idots4xgdc_7.jpeg'][index],
+  }));
+  partners = PARTNERS.map((partner) => ({
+    ...partner,
+    logo: partner.logo.replace('https://blsmy.com/images/', 'assets/original/'),
+  }));
+  stats = [
+    { value: '250,000', label: 'حجز ناجح', icon: 'stat-0.svg' },
+    { value: '70', label: 'المراكز', icon: 'stat-1.svg' },
+    { value: '500', label: 'الأطباء', icon: 'stat-2.svg' },
+    { value: '35,000', label: 'مستخدم راضي', icon: 'stat-3.svg' },
+    { value: '20,000', label: 'تقييم حقيقي', icon: 'stat-4.svg' },
+  ];
+  appScreens = [
+    'screenshot5.webp',
+    'screenshot4.webp',
+    'screenshot3.webp',
+    'screenshot2.webp',
+    'screenshot1.webp',
+  ];
+  scrollPartners(element: HTMLElement, direction: number) {
+    element.scrollBy({
+      left: direction * Math.max(250, element.clientWidth * 0.8),
+      behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+    });
+  }
   filteredServices = computed(() =>
     this.services.filter(
       (s) =>
@@ -49,11 +82,11 @@ export class ExperiencePage {
         (s.title + (s.description ?? '')).includes(this.query().trim()),
     ),
   );
-  filteredHospitals = computed(() =>
-    this.hospitals.filter(
-      (h) =>
-        (this.city() === 'all' || h.locationEn.toLowerCase() === this.city()) &&
-        (h.name + h.location).includes(this.query().trim()),
+  filteredPartners = computed(() =>
+    this.partners.filter((center) =>
+      (center.name + ' ' + (center.nameEn || ''))
+        .toLowerCase()
+        .includes(this.query().trim().toLowerCase()),
     ),
   );
   specialties = [
@@ -116,7 +149,6 @@ export class ExperiencePage {
     this.route.data.pipe(takeUntilDestroyed(destroyRef)).subscribe((data) => {
       this.page.set(data['page']);
       this.query.set('');
-      this.city.set('all');
       this.category.set('all');
       this.messageReady.set(false);
       this.step.set(1);
@@ -124,25 +156,24 @@ export class ExperiencePage {
     });
     this.route.queryParamMap.pipe(takeUntilDestroyed(destroyRef)).subscribe((params) => {
       this.query.set(params.get('q') ?? '');
-      this.city.set(params.get('city') ?? 'all');
       const center = params.get('center');
-      if (center && this.hospitals.some((h) => h.name === center)) this.booking.center = center;
+      if (center && this.partners.some((h) => h.name === center)) this.booking.center = center;
+      const subject = params.get('subject');
+      if (subject) {
+        if (
+          ['انضمام مركز طبي', 'طلب عرض توضيحي', 'مساعدة في طلب موعد', 'فرص العمل'].includes(subject)
+        )
+          this.contact.subject = subject;
+        else this.contact.message = 'أود الاستفسار عن ' + subject;
+      }
       const specialty = params.get('specialty');
       if (specialty && this.specialties.some((s) => s.name === specialty))
         this.booking.specialty = specialty;
     });
   }
-  search() {
-    this.router.navigate(['/hospitals'], {
-      queryParams: {
-        q: this.query().trim() || null,
-        city: this.city() === 'all' ? null : this.city(),
-      },
-    });
-  }
   next() {
     this.error.set('');
-    if (this.step() === 1 && (!this.booking.center || !this.booking.specialty)) {
+    if (this.step() === 1 && (!this.booking.center.trim() || !this.booking.specialty)) {
       this.error.set('اختر المركز والتخصص للمتابعة.');
       return;
     }
@@ -190,20 +221,5 @@ export class ExperiencePage {
         ),
     );
     this.messageReady.set(true);
-  }
-  serviceIcon(icon: string) {
-    const icons: Record<string, string> = {
-      calendar_today: '▦',
-      star_rate: '☆',
-      smartphone: '▯',
-      touch_app: '◎',
-      payment: '▱',
-      science: '⌁',
-      notifications_active: '♧',
-      home_health: '⌂',
-      video_call: '▷',
-      health_and_safety: '✚',
-    };
-    return icons[icon] ?? '✧';
   }
 }
